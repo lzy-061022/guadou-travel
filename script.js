@@ -205,8 +205,31 @@ btnSendCode.addEventListener('click', () => {
 document.getElementById('registerForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const t = translations[currentLang];
+    const country = document.getElementById('phoneCountry').value;
+    const phone = document.getElementById('regPhone').value.trim();
+    const name = document.getElementById('regName').value.trim();
+    const password = document.getElementById('regPassword').value;
+
+    if (!phone || !name || !password) return;
+
+    const fullPhone = country + phone;
+
+    // Check if user already exists
+    const users = JSON.parse(localStorage.getItem('guadou_users') || '[]');
+    if (users.find(u => u.phone === fullPhone)) {
+        showToast(t.phone_label ? t.phone_label + ' ' + (t.has_account || '') : 'Phone already registered');
+        return;
+    }
+
+    // Save user
+    users.push({ phone: fullPhone, name, password });
+    localStorage.setItem('guadou_users', JSON.stringify(users));
+
+    // Auto-login
+    localStorage.setItem('guadou_current_user', JSON.stringify({ phone: fullPhone, name }));
     showToast(t.register_success || 'Registration successful!');
     closeModal(registerModal);
+    updateAuthUI();
 });
 
 // ============================================
@@ -215,9 +238,52 @@ document.getElementById('registerForm').addEventListener('submit', (e) => {
 document.getElementById('loginForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const t = translations[currentLang];
+    const country = document.getElementById('loginCountry').value;
+    const phone = document.getElementById('loginPhone').value.trim();
+    const password = document.getElementById('loginPassword').value;
+
+    if (!phone || !password) return;
+
+    const fullPhone = country + phone;
+
+    // Find user
+    const users = JSON.parse(localStorage.getItem('guadou_users') || '[]');
+    const user = users.find(u => u.phone === fullPhone && u.password === password);
+    if (!user) {
+        showToast(t.chat_resp_unknown ? 'Sai thông tin đăng nhập' : 'Invalid phone or password', 'info');
+        return;
+    }
+
+    // Login
+    localStorage.setItem('guadou_current_user', JSON.stringify({ phone: user.phone, name: user.name }));
     showToast(t.login_success || 'Login successful!');
     closeModal(loginModal);
+    updateAuthUI();
 });
+
+// ============================================
+// Auth UI Update
+// ============================================
+function updateAuthUI() {
+    const currentUser = JSON.parse(localStorage.getItem('guadou_current_user') || 'null');
+    if (currentUser) {
+        btnRegister.textContent = currentUser.name;
+        btnRegister.style.background = 'var(--secondary)';
+        btnLogin.textContent = '✕';
+        btnLogin.style.borderColor = 'var(--primary)';
+        btnLogin.style.color = 'var(--primary)';
+        btnLogin.onclick = () => {
+            localStorage.removeItem('guadou_current_user');
+            btnRegister.textContent = translations[currentLang].register || '注册';
+            btnRegister.style.background = '';
+            btnLogin.textContent = translations[currentLang].login || '登录';
+            btnLogin.style.borderColor = '';
+            btnLogin.style.color = '';
+            btnLogin.onclick = null;
+            showToast(translations[currentLang].code_sent || '已退出登录', 'info');
+        };
+    }
+}
 
 // ============================================
 // Contact Form
@@ -434,4 +500,5 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTranslations(currentLang);
     initScrollAnimations();
     initRouteFilter();
+    updateAuthUI();
 });

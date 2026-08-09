@@ -18,7 +18,7 @@ const translations = {
         hero_cta2: "免费咨询",
 
         // Stats
-        stat_customers: "满意客户",
+        stat_customers: "每年接待游客",
         stat_routes: "边境线路",
         stat_years: "年行业经验",
         stat_rating: "客户评分",
@@ -326,8 +326,8 @@ const translations = {
 
         // About
         about_title: "关于瓜豆旅游",
-        about_desc1: "瓜豆旅游公司位于云南省红河州河口县，地处中越边境，是中国与越南之间的重要旅游门户。我们专注于为越南游客提供红河州边境旅游服务，线路覆盖屏边苗族风情、蒙自人文美食、建水千年古城、弥勒温泉康养。",
-        about_desc2: "凭借8年以上的行业经验和专业的越文导游团队，我们已成功服务超过10,000名越南游客，所有线路均以河口口岸为起止点，配备越南语导游，办理中越边境旅游通行证，成为越中边境旅游的领军品牌。",
+        about_desc1: "瓜豆旅游公司位于云南省红河州河口县，地处中越边境，是中国与越南之间的重要旅游门户。我们专注于为越南游客提供云南全境旅游服务，线路覆盖红河边境、大理丽江、香格里拉、西双版纳等全云南热门目的地。",
+        about_desc2: "凭借8年以上的行业经验和专业的中越双语团队，每年接待约1万名游客。旗下拥有豆豆屋客栈、滇越故事餐厅、观景咖啡、八条半乡村景点等实体店铺，为您的旅途提供温馨驿站。",
         about_f1: "正规旅行社资质",
         about_f2: "越南语导游团队",
         about_f3: "双重旅游保险",
@@ -416,6 +416,25 @@ const translations = {
         chat_resp_visa: "中越边境旅游通行证办理：\n\n✅ 我们协助办理中越边境旅游通行证\n📋 游客名单提前提交旅行社备案\n🚶 口岸快速通关\n⏰ 请提前联系办理\n\n📧 邮箱：HDgdtravel@outlook.com\n📱 Zalo：Zaio0889727222",
         chat_resp_contact: "联系我们：\n\n📧 邮箱：HDgdtravel@outlook.com\n📱 Zalo：Zaio0889727222\n📞 电话：0889727222\n📍 地址：中国云南省红河州河口县\n\n工作时间：每天 8:00-22:00",
         chat_resp_unknown: "抱歉，我暂时无法理解您的问题。您可以试试以下快捷问题，或直接联系我们：\n\n📧 HDgdtravel@outlook.com\n📱 Zalo：Zaio0889727222\n📞 0889727222",
+
+        // Businesses Section
+        biz_title: "旗下店铺",
+        biz_subtitle: "瓜豆旅游旗下实体店铺，旅途中的温馨驿站",
+        biz_doudou_name: "豆豆屋",
+        biz_doudou_loc: "河口县",
+        biz_doudou_desc: "温馨舒适的边境客栈，旅途中的家。紧邻口岸，交通便利，中越风情装饰。",
+        biz_dianyue_hekou_name: "滇越故事（河口店）",
+        biz_dianyue_hekou_loc: "河口县",
+        biz_dianyue_hekou_desc: "中越特色融合餐厅，品尝地道云南味与越南风味。口岸旁必到美食打卡点。",
+        biz_dianyue_mengzi_name: "滇越故事（蒙自店）",
+        biz_dianyue_mengzi_loc: "蒙自市",
+        biz_dianyue_mengzi_desc: "蒙自过桥米线发源地旁，正宗过桥米线+中越特色菜。游客必到美食地标。",
+        biz_coffee_name: "观景咖啡",
+        biz_coffee_loc: "河口县",
+        biz_coffee_desc: "边境线上的观景咖啡馆，越南河景尽收眼底。品一杯咖啡，赏两国风光。",
+        biz_batiaoban_name: "八条半",
+        biz_batiaoban_loc: "河口县",
+        biz_batiaoban_desc: "河口特色乡村旅游景点，感受边境田园风光与少数民族文化，体验慢生活。",
     },
 
     vi: {
@@ -436,7 +455,7 @@ const translations = {
         hero_cta2: "Tư vấn miễn phí",
 
         // Stats
-        stat_customers: "Khách hàng hài lòng",
+        stat_customers: "Du khách mỗi năm",
         stat_routes: "Tuyến biên giới",
         stat_years: "Năm kinh nghiệm",
         stat_rating: "Đánh giá khách hàng",
@@ -744,8 +763,8 @@ const translations = {
 
         // About
         about_title: "Về Gua Dou Travel",
-        about_desc1: "Công ty Du lịch Gua Dou tọa lạc tại huyện Hà Khẩu, châu Hồng Hà, tỉnh Vân Nam, nằm ở vùng biên giới Trung-Việt. Chúng tôi chuyên cung cấp dịch vụ du lịch biên giới châu Hồng Hà cho du khách Việt Nam, tuyến đường bao gồm Bình Biên văn hóa Mèo, Mông Tự ẩm thực, Kiến Thủy cổ thành, Di Lặc suối nước nóng.",
-        about_desc2: "Với hơn 8 năm kinh nghiệm và đội ngũ hướng dẫn viên tiếng Việt chuyên nghiệp, chúng tôi đã phục vụ thành công hơn 10.000 du khách Việt Nam. Mọi tuyến đều khởi hành từ cửa khẩu Hà Khẩu,配备 hướng dẫn viên tiếng Việt, làm giấy thông hành biên giới Trung-Việt.",
+        about_desc1: "Công ty Du lịch Gua Dou tọa lạc tại huyện Hà Khẩu, châu Hồng Hà, tỉnh Vân Nam, nằm ở vùng biên giới Trung-Việt. Chúng tôi chuyên cung cấp dịch vụ du lịch toàn Vân Nam cho du khách Việt Nam, tuyến đường bao gồm biên giới Hồng Hà, Đại Lệ, Lệ Giang, Shangri-La, Tây Song Bản Nạp.",
+        about_desc2: "Với hơn 8 năm kinh nghiệm và đội ngũ hướng dẫn viên song ngữ Trung-Việt chuyên nghiệp, mỗi năm đón khoảng 10.000 du khách. Dưới quyền có nhà khách Đậu Đậu, nhà hàng Điền Việt Cố Sự, quán cà phê ngắm cảnh, điểm du lịch Bát Điều Bán, cung cấp trạm dừng ấm áp cho hành trình của bạn.",
         about_f1: "Công ty du lịch chính quy",
         about_f2: "Đội ngũ hướng dẫn viên tiếng Việt",
         about_f3: "Bảo hiểm du lịch kép",
@@ -834,6 +853,25 @@ const translations = {
         chat_resp_visa: "Làm giấy thông hành biên giới Trung-Việt:\n\n✅ Chúng tôi hỗ trợ làm giấy thông hành\n📋 Danh sách du khách nộp trước cho công ty\n🚶 Qua cửa khẩu nhanh chóng\n⏰ Vui lòng liên hệ trước để làm thủ tục\n\n📧 Email: HDgdtravel@outlook.com\n📱 Zalo: Zaio0889727222",
         chat_resp_contact: "Liên hệ chúng tôi:\n\n📧 Email: HDgdtravel@outlook.com\n📱 Zalo: Zaio0889727222\n📞 Điện thoại: 0889727222\n📍 Địa chỉ: Huyện Hà Khẩu, Châu Hồng Hà, Vân Nam, Trung Quốc\n\nGiờ làm việc: 8:00-22:00 hàng ngày",
         chat_resp_unknown: "Xin lỗi, tôi chưa hiểu câu hỏi của bạn. Bạn có thể thử các câu hỏi nhanh hoặc liên hệ trực tiếp:\n\n📧 HDgdtravel@outlook.com\n📱 Zalo: Zaio0889727222\n📞 0889727222",
+
+        // Businesses Section
+        biz_title: "Cửa hàng trực thuộc",
+        biz_subtitle: "Các cơ sở trực thuộc Gua Dou Travel, trạm dừng ấm áp trên hành trình",
+        biz_doudou_name: "Nhà khách Đậu Đậu",
+        biz_doudou_loc: "Huyện Hà Khẩu",
+        biz_doudou_desc: "Nhà khách biên giới ấm áp thoải mái, nhà trên đường. Gần cửa khẩu, giao thông tiện lợi, trang trí phong cách Trung-Việt.",
+        biz_dianyue_hekou_name: "Điền Việt Cố Sự (Hà Khẩu)",
+        biz_dianyue_hekou_loc: "Huyện Hà Khẩu",
+        biz_dianyue_hekou_desc: "Nhà hàng kết hợp đặc sắc Trung-Việt, thưởng thức hương vị Vân Nam và Việt Nam chính gốc. Điểm ăn uống must-visit bên cạnh cửa khẩu.",
+        biz_dianyue_mengzi_name: "Điền Việt Cố Sự (Mông Tự)",
+        biz_dianyue_mengzi_loc: "Thành phố Mông Tự",
+        biz_dianyue_mengzi_desc: "Bên cạnh nơi phát sinh mì qua cầu Mông Tự, mì qua cầu chính gốc + món đặc sắc Trung-Việt. Điểm ăn uống must-visit cho du khách.",
+        biz_coffee_name: "Cà phê ngắm cảnh",
+        biz_coffee_loc: "Huyện Hà Khẩu",
+        biz_coffee_desc: "Quán cà phê ngắm cảnh trên đường biên giới,全景 sông Việt Nam. Thưởng thức ly cà phê, ngắm cảnh hai nước.",
+        biz_batiaoban_name: "Bát Điều Bán",
+        biz_batiaoban_loc: "Huyện Hà Khẩu",
+        biz_batiaoban_desc: "Điểm du lịch nông thôn đặc sắc Hà Khẩu, cảm nhận phong cảnh điền viên biên giới và văn hóa dân tộc thiểu số, trải nghiệm cuộc sống chậm.",
     },
 
     en: {
@@ -854,7 +892,7 @@ const translations = {
         hero_cta2: "Free Consultation",
 
         // Stats
-        stat_customers: "Happy Customers",
+        stat_customers: "Visitors Per Year",
         stat_routes: "Border Routes",
         stat_years: "Years of Experience",
         stat_rating: "Customer Rating",
@@ -1162,8 +1200,8 @@ const translations = {
 
         // About
         about_title: "About Gua Dou Travel",
-        about_desc1: "Gua Dou Travel Company is located in Hekou County, Honghe Prefecture, Yunnan Province, at the China-Vietnam border. We specialize in providing Honghe border tourism for Vietnamese visitors, covering Pingbian Miao culture, Mengzi food heritage, Jianshui ancient town, and Mile hot springs wellness.",
-        about_desc2: "With over 8 years of experience and professional Vietnamese-speaking guides, we have served over 10,000 Vietnamese tourists. All routes depart from Hekou Port with Vietnamese-speaking guides and China-Vietnam border travel pass assistance.",
+        about_desc1: "Gua Dou Travel Company is located in Hekou County, Honghe Prefecture, Yunnan Province, at the China-Vietnam border. We specialize in providing full Yunnan tourism services for Vietnamese visitors, covering Honghe Border, Dali & Lijiang, Shangri-La, Xishuangbanna and all popular Yunnan destinations.",
+        about_desc2: "With over 8 years of experience and a professional Chinese-Vietnamese bilingual team, we receive about 10,000 visitors per year. We operate Doudou House Inn, Dianyue Story Restaurant, Scenic Coffee, and Batiaoban Village — warm rest stops for your journey.",
         about_f1: "Licensed travel agency",
         about_f2: "Vietnamese-speaking guide team",
         about_f3: "Dual travel insurance",
@@ -1252,5 +1290,24 @@ const translations = {
         chat_resp_visa: "China-Vietnam border travel pass:\n\n✅ We assist with border travel pass application\n📋 Tourist roster submitted in advance\n🚶 Fast border crossing\n⏰ Please contact us in advance\n\n📧 Email: HDgdtravel@outlook.com\n📱 Zalo: Zaio0889727222",
         chat_resp_contact: "Contact us:\n\n📧 Email: HDgdtravel@outlook.com\n📱 Zalo: Zaio0889727222\n📞 Phone: 0889727222\n📍 Address: Hekou County, Honghe Prefecture, Yunnan, China\n\nWorking hours: 8:00-22:00 daily",
         chat_resp_unknown: "Sorry, I couldn't understand your question. Try the quick replies or contact us directly:\n\n📧 HDgdtravel@outlook.com\n📱 Zalo: Zaio0889727222\n📞 0889727222",
+
+        // Businesses Section
+        biz_title: "Our Businesses",
+        biz_subtitle: "Gua Dou Travel's establishments — warm rest stops on your journey",
+        biz_doudou_name: "Doudou House",
+        biz_doudou_loc: "Hekou County",
+        biz_doudou_desc: "Cozy border inn, your home away from home. Next to the port, convenient transport, Chinese-Vietnamese style decor.",
+        biz_dianyue_hekou_name: "Dianyue Story (Hekou)",
+        biz_dianyue_hekou_loc: "Hekou County",
+        biz_dianyue_hekou_desc: "Chinese-Vietnamese fusion restaurant. Taste authentic Yunnan and Vietnamese flavors. Must-visit dining spot by the port.",
+        biz_dianyue_mengzi_name: "Dianyue Story (Mengzi)",
+        biz_dianyue_mengzi_loc: "Mengzi City",
+        biz_dianyue_mengzi_desc: "Next to the birthplace of crossing-bridge noodles. Authentic crossing-bridge noodles + Chinese-Vietnamese specialties. Must-visit food landmark.",
+        biz_coffee_name: "Scenic Coffee",
+        biz_coffee_loc: "Hekou County",
+        biz_coffee_desc: "Scenic café on the border line with panoramic Vietnam river views. Sip coffee, enjoy two countries' scenery.",
+        biz_batiaoban_name: "Batiaoban",
+        biz_batiaoban_loc: "Hekou County",
+        biz_batiaoban_desc: "Hekou's special rural tourism spot. Experience border pastoral scenery and ethnic minority culture. Embrace slow living.",
     }
 };

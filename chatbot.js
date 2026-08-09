@@ -69,6 +69,14 @@
 服务保障：
 - 边境通行证办理、越文导游全程服务、准四星酒店住宿、空调大巴接送、双重旅游保险、特色餐饮安排
 
+旗下店铺：
+- 豆豆屋（河口县）：温馨舒适的边境客栈，旅途中的家，紧邻口岸，中越风情装饰
+- 滇越故事（河口店）：中越特色融合餐厅，品尝地道云南味与越南风味，口岸旁必到美食打卡点
+- 滇越故事（蒙自店）：蒙自过桥米线发源地旁，正宗过桥米线+中越特色菜，游客必到美食地标
+- 观景咖啡（河口县）：边境线上的观景咖啡馆，越南河景尽收眼底
+- 八条半（河口县）：河口特色乡村旅游景点，感受边境田园风光与少数民族文化，体验慢生活
+- 所有店铺电话：0889727222
+
 注意事项：
 - 回答要简洁友好，不要过长
 - 涉及价格的问题引导联系邮箱HDgdtravel@outlook.com或Zalo Zaio0889727222
@@ -120,6 +128,14 @@ Giấy thông hành:
 - Bản Nạp: Voi Rừng, vườn thực vật, chợ đêm, vườn dân tộc Thái
 - Hồ Lô Cố: bán đảo Lý Cách, cầu Tẩu Hôn
 
+Cửa hàng trực thuộc:
+- Nhà khách Đậu Đậu (Hà Khẩu): nhà khách biên giới ấm áp, gần cửa khẩu, trang trí phong cách Trung-Việt
+- Điền Việt Cố Sự Hà Khẩu: nhà hàng kết hợp đặc sắc Trung-Việt, điểm ăn uống must-visit bên cửa khẩu
+- Điền Việt Cố Sự Mông Tự: bên cạnh nơi phát sinh mì qua cầu, mì qua cầu chính gốc + món đặc sắc Trung-Việt
+- Cà phê ngắm cảnh (Hà Khẩu): quán cà phê trên đường biên giới, ngắm cảnh sông Việt Nam
+- Bát Điều Bán (Hà Khẩu): điểm du lịch nông thôn đặc sắc, văn hóa dân tộc thiểu số, trải nghiệm cuộc sống chậm
+- Điện thoại tất cả: 0889727222
+
 Lưu ý:
 - Trả lời ngắn gọn thân thiện
 - Về giá cả, hướng dẫn liên hệ HDgdtravel@outlook.com hoặc Zalo Zaio0889727222
@@ -170,6 +186,14 @@ Famous Attractions:
 - Shangri-La: Pudacuo, Songzanlin Monastery, Tiger Leaping Gorge
 - Xishuangbanna: Wild Elephant Valley, Botanical Garden, Starlight Night Market, Dai Park
 - Lugu Lake: Lige Peninsula, Marriage Bridge
+
+Our Businesses:
+- Doudou House (Hekou): Cozy border inn, home away from home, next to the port, Chinese-Vietnamese style decor
+- Dianyue Story Hekou: Chinese-Vietnamese fusion restaurant, must-visit dining spot by the port
+- Dianyue Story Mengzi: Next to the birthplace of crossing-bridge noodles, authentic noodles + Chinese-Vietnamese specialties
+- Scenic Coffee (Hekou): Scenic café on the border line, panoramic Vietnam river views
+- Batiaoban (Hekou): Rural tourism spot, ethnic minority culture, embrace slow living
+- All businesses phone: 0889727222
 
 Notes:
 - Keep answers concise and friendly
