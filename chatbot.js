@@ -75,7 +75,7 @@
 - 滇越故事（蒙自店）：蒙自过桥米线发源地旁，正宗过桥米线+中越特色菜，游客必到美食地标
 - 观景咖啡（河口县）：边境线上的观景咖啡馆，越南河景尽收眼底
 - 八条半（河口县）：河口特色乡村旅游景点，感受边境田园风光与少数民族文化，体验慢生活
-- 所有店铺电话：0889727222
+- 所有店铺电话：豆豆屋3428200、滇越故事河口店3429200、滇越故事蒙自店3660036、咖啡小馆13114211824、八条半19048737489
 
 注意事项：
 - 回答要简洁友好，不要过长
@@ -134,7 +134,7 @@ Cửa hàng trực thuộc:
 - Điền Việt Cố Sự Mông Tự: bên cạnh nơi phát sinh mì qua cầu, mì qua cầu chính gốc + món đặc sắc Trung-Việt
 - Cà phê ngắm cảnh (Hà Khẩu): quán cà phê trên đường biên giới, ngắm cảnh sông Việt Nam
 - Bát Điều Bán (Hà Khẩu): điểm du lịch nông thôn đặc sắc, văn hóa dân tộc thiểu số, trải nghiệm cuộc sống chậm
-- Điện thoại tất cả: 0889727222
+- Điện thoại: Đậu Đậu 3428200, Điền Việt Hà Khẩu 3429200, Điền Việt Mông Tự 3660036, Tiệm Cà Phê 13114211824, Bát Điều Bán 19048737489
 
 Lưu ý:
 - Trả lời ngắn gọn thân thiện
@@ -193,7 +193,7 @@ Our Businesses:
 - Dianyue Story Mengzi: Next to the birthplace of crossing-bridge noodles, authentic noodles + Chinese-Vietnamese specialties
 - Scenic Coffee (Hekou): Scenic café on the border line, panoramic Vietnam river views
 - Batiaoban (Hekou): Rural tourism spot, ethnic minority culture, embrace slow living
-- All businesses phone: 0889727222
+- Business phones: Doudou 3428200, Dianyue Hekou 3429200, Dianyue Mengzi 3660036, Coffee House 13114211824, Batiaoban 19048737489
 
 Notes:
 - Keep answers concise and friendly
