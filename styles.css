@@ -120,6 +120,13 @@ ul {
     font-size: 1.7rem;
 }
 
+.logo-img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
 .nav-links {
     display: flex;
     gap: 28px;
@@ -233,6 +240,10 @@ ul {
     cursor: pointer;
 }
 
+.mobile-auth-btns {
+    display: none;
+}
+
 /* ============================================
    Hero Section
    ============================================ */
@@ -255,7 +266,7 @@ ul {
     right: 0;
     bottom: 0;
     background:
-        url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Honghe%20Yunnan%20border%20town%20landscape%20with%20tropical%20river%20mountains%20Miao%20ethnic%20village%20and%20ancient%20town%20golden%20hour&image_size=landscape_16_9') center/cover;
+        url('https://picsum.photos/seed/yunnan-travel/1920/1080') center/cover;
     z-index: 0;
 }
 
@@ -872,7 +883,7 @@ ul {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.92);
-    z-index: 3000;
+    z-index: 9999;
     display: none;
     align-items: center;
     justify-content: center;
@@ -1852,8 +1863,24 @@ ul {
         display: none;
     }
 
-    .btn-register, .btn-login {
+    .nav-actions > .btn-register,
+    .nav-actions > .btn-login {
         display: none;
+    }
+
+    .mobile-auth-btns {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--gray-200);
+    }
+
+    .mobile-auth-btns .btn-register,
+    .mobile-auth-btns .btn-login {
+        display: inline-block;
+        flex: 1;
+        text-align: center;
     }
 
     .hero-content h1 {

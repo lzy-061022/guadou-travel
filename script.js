@@ -135,6 +135,13 @@ function closeModal(modal) {
 
 btnRegister.addEventListener('click', () => openModal(registerModal));
 btnLogin.addEventListener('click', () => openModal(loginModal));
+
+// Mobile auth buttons
+const btnRegisterMobile = document.getElementById('btnRegisterMobile');
+const btnLoginMobile = document.getElementById('btnLoginMobile');
+if (btnRegisterMobile) btnRegisterMobile.addEventListener('click', () => { navLinks.classList.remove('active'); openModal(registerModal); });
+if (btnLoginMobile) btnLoginMobile.addEventListener('click', () => { navLinks.classList.remove('active'); openModal(loginModal); });
+
 registerClose.addEventListener('click', () => closeModal(registerModal));
 loginClose.addEventListener('click', () => closeModal(loginModal));
 
@@ -438,11 +445,19 @@ let currentLandmarkIndex = 0;
 
 function openLightbox(el) {
     const grid = el.closest('.landmarks-grid');
+    if (!grid) return;
     const items = grid.querySelectorAll('.landmark-item');
-    currentLandmarks = Array.from(items).map(item => ({
-        src: item.querySelector('img').src.replace('square_hd', 'landscape_16_9'),
-        name: item.querySelector('.landmark-name').textContent
-    }));
+    currentLandmarks = Array.from(items).map(item => {
+        const img = item.querySelector('img');
+        let src = img.src;
+        // Try to get a larger version, fall back to original if format doesn't match
+        const largerSrc = src.replace('square_hd', 'landscape_16_9');
+        return {
+            src: largerSrc,
+            fallbackSrc: src,
+            name: item.querySelector('.landmark-name') ? item.querySelector('.landmark-name').textContent : ''
+        };
+    });
     currentLandmarkIndex = Array.from(items).indexOf(el);
     showLightboxImage();
     document.getElementById('landmarkLightbox').classList.add('active');
@@ -451,7 +466,13 @@ function openLightbox(el) {
 
 function showLightboxImage() {
     const item = currentLandmarks[currentLandmarkIndex];
-    document.getElementById('lightboxImg').src = item.src;
+    const img = document.getElementById('lightboxImg');
+    img.src = item.src;
+    // Fallback to original if larger version fails
+    img.onerror = function() {
+        this.src = item.fallbackSrc || '';
+        this.onerror = null;
+    };
     document.getElementById('lightboxName').textContent = item.name;
 }
 
@@ -490,6 +511,14 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') {
         currentLandmarkIndex = (currentLandmarkIndex + 1) % currentLandmarks.length;
         showLightboxImage();
+    }
+});
+
+// Event delegation for landmark clicks (more reliable than inline onclick)
+document.addEventListener('click', (e) => {
+    const landmarkItem = e.target.closest('.landmark-item');
+    if (landmarkItem) {
+        openLightbox(landmarkItem);
     }
 });
 
