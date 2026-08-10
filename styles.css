@@ -266,7 +266,7 @@ ul {
     right: 0;
     bottom: 0;
     background:
-        url('https://picsum.photos/seed/yunnan-travel/1920/1080') center/cover;
+        url('images/dianchi.jpg') center/cover;
     z-index: 0;
 }
 
@@ -924,6 +924,13 @@ ul {
     font-size: 1.15rem;
     font-weight: 600;
     margin-top: 14px;
+    text-align: center;
+}
+
+.landmark-lightbox-counter {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    margin-top: 4px;
     text-align: center;
 }
 

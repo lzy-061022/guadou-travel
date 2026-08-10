@@ -449,12 +449,8 @@ function openLightbox(el) {
     const items = grid.querySelectorAll('.landmark-item');
     currentLandmarks = Array.from(items).map(item => {
         const img = item.querySelector('img');
-        let src = img.src;
-        // Try to get a larger version, fall back to original if format doesn't match
-        const largerSrc = src.replace('square_hd', 'landscape_16_9');
         return {
-            src: largerSrc,
-            fallbackSrc: src,
+            src: img.src,
             name: item.querySelector('.landmark-name') ? item.querySelector('.landmark-name').textContent : ''
         };
     });
@@ -468,12 +464,10 @@ function showLightboxImage() {
     const item = currentLandmarks[currentLandmarkIndex];
     const img = document.getElementById('lightboxImg');
     img.src = item.src;
-    // Fallback to original if larger version fails
-    img.onerror = function() {
-        this.src = item.fallbackSrc || '';
-        this.onerror = null;
-    };
     document.getElementById('lightboxName').textContent = item.name;
+    // Update counter
+    const counter = document.getElementById('lightboxCounter');
+    if (counter) counter.textContent = `${currentLandmarkIndex + 1} / ${currentLandmarks.length}`;
 }
 
 document.getElementById('lightboxClose').addEventListener('click', () => {
