@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滇越故事餐厅 | 河口虽小，却装得下两个国家的故事 | 豆豆屋餐饮品牌</title>
+    <meta name="description" content="滇越故事餐厅，豆豆屋餐饮品牌旗下，深度融合滇越铁路文化与口岸边境文化。河口店紧邻河口口岸，蒙自店品味过桥米线。中越主厨团队，中越双语服务，累计服务超50万人次。">
+    <link rel="icon" href="logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B0000;
+            --primary-dark: #5c0000;
+            --primary-glow: rgba(139,0,0,0.25);
+            --accent: #DAA520;
+            --accent-light: #f0d060;
+            --secondary: #2c1810;
+            --bg-cream: #faf6f1;
+            --text-dark: #1a1a2e;
+            --text-medium: #555;
+            --text-light: #888;
+            --gray-200: #e8e8e8;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 14px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Noto Sans SC',sans-serif; color:var(--text-dark); background:var(--bg-cream); line-height:1.6; }
+
+        /* Navigation */
+        .navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); padding:0 24px; transition:var(--transition); }
+        .navbar.scrolled { box-shadow:var(--shadow-sm); }
+        .nav-container { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:68px; }
+        .nav-back { display:flex; align-items:center; gap:8px; color:var(--secondary); text-decoration:none; font-weight:600; font-size:0.95rem; transition:var(--transition); }
+        .nav-back:hover { color:var(--primary); transform:translateX(-3px); }
+        .nav-title { font-weight:700; color:var(--primary); font-size:1.1rem; display:flex; align-items:center; gap:8px; }
+
+        /* Hero */
+        .hero { position:relative; height:85vh; min-height:500px; overflow:hidden; }
+        .hero-bg { position:absolute; inset:0; background:url('images/dianyue_hero.jpg') center/cover no-repeat; }
+        .hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(44,24,16,0.7),rgba(139,0,0,0.5)); }
+        .hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; color:white; padding:0 24px; }
+        .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.15); backdrop-filter:blur(8px); padding:8px 20px; border-radius:30px; font-size:0.85rem; margin-bottom:20px; border:1px solid rgba(255,255,255,0.25); }
+        .hero h1 { font-size:3.2rem; font-weight:900; margin-bottom:12px; text-shadow:0 2px 20px rgba(0,0,0,0.3); }
+        .hero h1 span { color:var(--accent); }
+        .hero-sub { font-size:1.2rem; max-width:620px; opacity:0.95; line-height:1.8; }
+        .hero-tags { display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; justify-content:center; }
+        .hero-tag { background:rgba(255,255,255,0.2); backdrop-filter:blur(6px); padding:8px 18px; border-radius:20px; font-size:0.82rem; border:1px solid rgba(255,255,255,0.2); }
+
+        /* Section styles */
+        .section { padding:80px 24px; }
+        .container { max-width:1100px; margin:0 auto; }
+        .section-header { text-align:center; margin-bottom:50px; }
+        .section-header h2 { font-size:2rem; font-weight:700; color:var(--secondary); margin-bottom:10px; }
+        .section-header p { color:var(--text-medium); font-size:1rem; max-width:600px; margin:0 auto; }
+        .section-divider { width:50px; height:4px; background:var(--primary); border-radius:2px; margin:14px auto; }
+
+        /* About section */
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+        .about-text h3 { font-size:1.5rem; color:var(--secondary); margin-bottom:16px; }
+        .about-text p { color:var(--text-medium); margin-bottom:14px; line-height:1.8; }
+        .about-img { border-radius:var(--border-radius); overflow:hidden; box-shadow:var(--shadow-lg); }
+        .about-img img { width:100%; display:block; aspect-ratio:16/10; object-fit:cover; }
+
+        /* Stats */
+        .stats { background:var(--primary-dark); padding:50px 24px; }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:1100px; margin:0 auto; }
+        .stat-item { text-align:center; color:white; }
+        .stat-num { font-size:2.4rem; font-weight:900; color:var(--accent); }
+        .stat-label { font-size:0.85rem; opacity:0.8; margin-top:4px; }
+
+        /* Features */
+        .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+        .feature-card { background:white; border-radius:var(--border-radius); padding:32px 24px; text-align:center; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); transition:var(--transition); }
+        .feature-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-md); border-color:transparent; }
+        .feature-icon { width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--primary)); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; color:white; font-size:1.4rem; }
+        .feature-card h3 { font-size:1.05rem; color:var(--secondary); margin-bottom:8px; }
+        .feature-card p { color:var(--text-medium); font-size:0.88rem; line-height:1.7; }
+
+        /* Honors */
+        .honors { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); padding:80px 24px; }
+        .honors-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:900px; margin:0 auto; }
+        .honor-card { background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.2); border-radius:var(--border-radius); padding:28px 24px; color:white; text-align:center; transition:var(--transition); }
+        .honor-card:hover { background:rgba(255,255,255,0.2); transform:translateY(-4px); }
+        .honor-card i { font-size:2rem; color:var(--accent); margin-bottom:12px; }
+        .honor-card h4 { font-size:1rem; margin-bottom:6px; font-weight:600; }
+        .honor-card p { font-size:0.85rem; opacity:0.85; line-height:1.6; }
+
+        /* Pandemic section */
+        .pandemic { background:white; }
+        .pandemic-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:start; }
+        .pandemic-text h3 { font-size:1.3rem; color:var(--primary); margin-bottom:16px; }
+        .pandemic-list { list-style:none; }
+        .pandemic-list li { padding:14px 0; border-bottom:1px solid var(--gray-200); display:flex; align-items:flex-start; gap:12px; color:var(--text-medium); font-size:0.95rem; line-height:1.7; }
+        .pandemic-list li:last-child { border-bottom:none; }
+        .pandemic-list li i { color:var(--primary); margin-top:4px; flex-shrink:0; }
+        .pandemic-highlight { background:linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius:var(--border-radius); padding:36px; color:white; text-align:center; }
+        .pandemic-highlight .big-num { font-size:3rem; font-weight:900; color:var(--accent); }
+        .pandemic-highlight .sub-num { font-size:1.8rem; font-weight:700; color:var(--accent-light); margin-top:20px; }
+        .pandemic-highlight p { font-size:0.9rem; opacity:0.9; margin-top:6px; }
+
+        /* Stores */
+        .stores-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+        .store-card { background:white; border-radius:var(--border-radius); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--gray-200); transition:var(--transition); }
+        .store-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+        .store-img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+        .store-body { padding:24px; }
+        .store-body h3 { font-size:1.25rem; color:var(--primary); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+        .store-body p { color:var(--text-medium); font-size:0.9rem; line-height:1.7; margin-bottom:6px; }
+        .store-body .store-tag { display:inline-block; background:var(--primary); color:white; padding:3px 12px; border-radius:12px; font-size:0.75rem; margin-right:6px; margin-bottom:6px; }
+
+        /* Menu */
+        .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:800px; margin:0 auto; }
+        .menu-item { display:flex; align-items:center; gap:14px; background:white; padding:16px 20px; border-radius:12px; box-shadow:var(--shadow-sm); transition:var(--transition); }
+        .menu-item:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+        .menu-icon { width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--primary)); display:flex; align-items:center; justify-content:center; color:white; font-size:1.1rem; flex-shrink:0; }
+        .menu-item h4 { font-size:0.95rem; color:var(--secondary); margin-bottom:2px; }
+        .menu-item p { font-size:0.8rem; color:var(--text-medium); }
+
+        /* Gallery */
+        .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+        .gallery-item { position:relative; border-radius:10px; overflow:hidden; aspect-ratio:4/3; cursor:pointer; }
+        .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
+        .gallery-item:hover img { transform:scale(1.1); }
+        .gallery-name { position:absolute; bottom:0; left:0; right:0; padding:6px; background:linear-gradient(transparent,rgba(0,0,0,0.7)); color:white; font-size:0.75rem; text-align:center; }
+
+        /* Contact */
+        .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+        .contact-card { background:white; border-radius:var(--border-radius); padding:36px; box-shadow:var(--shadow-md); text-align:center; }
+        .contact-card h3 { font-size:1.3rem; color:var(--primary); margin-bottom:20px; }
+        .contact-item { display:flex; align-items:center; gap:12px; justify-content:center; padding:12px 0; border-bottom:1px solid var(--gray-200); }
+        .contact-item:last-child { border-bottom:none; }
+        .contact-item i { color:var(--primary); width:20px; }
+        .contact-item a { color:var(--secondary); text-decoration:none; }
+        .contact-item a:hover { color:var(--primary); }
+
+        /* Back to main site */
+        .back-site { text-align:center; padding:40px 24px; background:var(--primary-dark); }
+        .back-site a { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:white; padding:14px 36px; border-radius:10px; text-decoration:none; font-weight:600; font-size:1rem; transition:var(--transition); }
+        .back-site a:hover { background:#c49420; transform:translateY(-2px); }
+
+        /* Lightbox */
+        .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; display:none; align-items:center; justify-content:center; flex-direction:column; padding:20px; }
+        .lightbox.active { display:flex; }
+        .lightbox img { max-width:90%; max-height:75vh; border-radius:12px; object-fit:contain; }
+        .lightbox-close { position:absolute; top:20px; right:30px; color:white; font-size:2rem; cursor:pointer; background:none; border:none; }
+        .lightbox-name { color:white; font-size:1.1rem; margin-top:12px; }
+        .lightbox-counter { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-top:4px; }
+        .lightbox-nav { display:flex; gap:14px; margin-top:14px; }
+        .lightbox-nav button { padding:10px 22px; background:rgba(255,255,255,0.12); color:white; border:1px solid rgba(255,255,255,0.25); border-radius:8px; font-size:0.95rem; cursor:pointer; }
+        .lightbox-nav button:hover { background:rgba(255,255,255,0.3); }
+
+        /* Charity */
+        .charity-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
+        .charity-text h3 { font-size:1.3rem; color:var(--primary); margin-bottom:16px; }
+        .charity-text p { color:var(--text-medium); margin-bottom:14px; line-height:1.8; }
+        .charity-stats { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+        .charity-stat { background:white; border-radius:var(--border-radius); padding:24px; text-align:center; box-shadow:var(--shadow-sm); }
+        .charity-stat .num { font-size:2rem; font-weight:900; color:var(--primary); }
+        .charity-stat .label { font-size:0.85rem; color:var(--text-medium); margin-top:4px; }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .hero h1 { font-size:2.2rem; }
+            .hero-sub { font-size:1rem; }
+            .about-grid, .pandemic-grid, .charity-grid { grid-template-columns:1fr; }
+            .features-grid { grid-template-columns:1fr; }
+            .gallery-grid { grid-template-columns:repeat(2,1fr); }
+            .stats-grid { grid-template-columns:repeat(2,1fr); gap:30px; }
+            .honors-grid { grid-template-columns:1fr; }
+            .stores-grid { grid-template-columns:1fr; }
+            .contact-grid { grid-template-columns:1fr; }
+            .menu-grid { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> 返回瓜豆旅游</a>
+        <span class="nav-title"><i class="fas fa-utensils"></i> 滇越故事餐厅</span>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-train"></i> 滇越铁路文化</div>
+        <h1>滇越<span>故事</span></h1>
+        <p class="hero-sub">河口虽小，却装得下两个国家的故事。<br>深度融合滇越铁路文化与口岸边境文化的特色餐厅。</p>
+        <div class="hero-tags">
+            <span class="hero-tag"><i class="fas fa-train"></i> 滇越铁路</span>
+            <span class="hero-tag"><i class="fas fa-flag"></i> 边境口岸</span>
+            <span class="hero-tag"><i class="fas fa-utensils"></i> 中越美食</span>
+            <span class="hero-tag"><i class="fas fa-hands-helping"></i> 公益担当</span>
+            <span class="hero-tag"><i class="fas fa-language"></i> 中越双语</span>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+    <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">50万+</div><div class="stat-label">累计服务人次</div></div>
+        <div class="stat-item"><div class="stat-num">600㎡</div><div class="stat-label">门店面积</div></div>
+        <div class="stat-item"><div class="stat-num">96%</div><div class="stat-label">线上好评率</div></div>
+        <div class="stat-item"><div class="stat-num">2.3万份</div><div class="stat-label">疫情期间免费爱心餐</div></div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section" style="background:white;">
+    <div class="container">
+        <div class="section-header">
+            <h2>品牌故事</h2>
+            <div class="section-divider"></div>
+            <p>河口虽小，却装得下两个国家的故事</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>两个国家的故事</h3>
+                <p>滇越故事餐厅，隶属于豆豆屋餐饮品牌旗下，由创始人陶英于2006年创办。餐厅深度融合滇越铁路文化和口岸边境文化，以"河口虽小，却装得下两个国家的故事"为品牌内核，讲述中越边境线上的人文故事。</p>
+                <p>门店面积超过600平方米，可同时容纳300人用餐。店内装饰富含滇越铁路文化元素和边境特色，百年米轨的枕木、法式站牌、中越风情壁画……每一处细节都在诉说着两个国家的故事。</p>
+                <p>餐厅拥有专业中越主厨团队，提供中越双语服务，累计服务超过50万人次，线上好评率≥96%。在这里，每一道菜都是一段跨越国界的故事。</p>
+            </div>
+            <div class="about-img">
+                <img src="images/dianyue_culture.jpg" alt="滇越铁路文化与边境特色">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>特色亮点</h2>
+            <div class="section-divider"></div>
+            <p>深度融合中越文化，打造边境餐饮名片</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-train"></i></div>
+                <h3>滇越铁路文化</h3>
+                <p>店内装饰融入滇越铁路文化元素，百年米轨枕木、法式站牌、铁路老照片，在用餐中感受百年铁路的沧桑与浪漫。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-flag"></i></div>
+                <h3>口岸边境风情</h3>
+                <p>河口店紧邻河口口岸，坐拥异域风情街独特地理优势，中越边境文化深度融合，一步跨越两个国家的味蕾体验。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-hat-chef"></i></div>
+                <h3>中越主厨团队</h3>
+                <p>专业中越双国籍主厨团队，融合中式烹饪技法与越南料理精髓，独家"双厨匠心烹制工艺"，打造独特的边境风味。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-language"></i></div>
+                <h3>中越双语服务</h3>
+                <p>提供中越双语菜单和服务，方便中外宾客无障碍点餐，让两国食客都能在滇越故事找到家的味道。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>超大面积餐厅</h3>
+                <p>门店面积超过600平方米，可同时容纳300人用餐，适合家庭聚餐、商务宴请、团队接待等各类场景。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-star"></i></div>
+                <h3>口碑卓越</h3>
+                <p>累计服务超过50万人次，线上好评率≥96%，获"红河州文旅融合示范餐饮企业"称号，是河口餐饮的标杆品牌。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Honors -->
+<section class="honors">
+    <div class="container">
+        <div class="section-header" style="margin-bottom:40px;">
+            <h2 style="color:white;">荣誉与口碑</h2>
+            <div class="section-divider" style="background:var(--accent);"></div>
+            <p style="color:rgba(255,255,255,0.8);">创始人陶英与滇越故事餐厅荣获多项殊荣</p>
+        </div>
+        <div class="honors-grid">
+            <div class="honor-card">
+                <i class="fas fa-heart"></i>
+                <h4>"红河好人"荣誉称号</h4>
+                <p>创始人陶英于2023年7月荣获"红河好人"荣誉称号，表彰其在疫情防控和社会公益方面的突出贡献</p>
+            </div>
+            <div class="honor-card">
+                <i class="fas fa-award"></i>
+                <h4>"河口县劳动模范"</h4>
+                <p>创始人陶英获评"河口县劳动模范"，以勤劳与担当书写边境餐饮人的奋斗篇章</p>
+            </div>
+            <div class="honor-card">
+                <i class="fas fa-female"></i>
+                <h4>"河口县巾帼创业带头人"</h4>
+                <p>陶英获评"河口县巾帼创业带头人"，是河口女性创业的杰出代表与榜样</p>
+            </div>
+            <div class="honor-card">
+                <i class="fas fa-trophy"></i>
+                <h4>"红河州文旅融合示范餐饮企业"</h4>
+                <p>滇越故事餐厅荣获"红河州文旅融合示范餐饮企业"称号，是文化与餐饮深度融合的典范</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pandemic Contribution -->
+<section class="section pandemic">
+    <div class="container">
+        <div class="section-header">
+            <h2>疫情担当</h2>
+            <div class="section-divider"></div>
+            <p>大疫面前显担当，边境线上守初心</p>
+        </div>
+        <div class="pandemic-grid">
+            <div class="pandemic-text">
+                <h3><i class="fas fa-shield-virus" style="margin-right:8px;"></i>守边人的后方力量</h3>
+                <ul class="pandemic-list">
+                    <li><i class="fas fa-check-circle"></i>疫情期间组建餐饮志愿服务队，为边境一线疫情防控值守人员送餐</li>
+                    <li><i class="fas fa-check-circle"></i>三年累计免费提供爱心餐2.3万份，折算价值达50余万元</li>
+                    <li><i class="fas fa-check-circle"></i>积极捐款捐物助力疫情防控，免费发放口罩、消毒液给值班值守人员</li>
+                    <li><i class="fas fa-check-circle"></i>2021年10月为河口县桥头乡守边人员捐赠300件军用棉大衣，价值9.8万元</li>
+                    <li><i class="fas fa-check-circle"></i>疫情期间不遣散员工，积极开辟就业岗位，吸纳贫困家庭劳动力20余人</li>
+                    <li><i class="fas fa-check-circle"></i>对河口特殊时期的后勤保障做出重大贡献</li>
+                </ul>
+            </div>
+            <div>
+                <div class="pandemic-highlight">
+                    <div class="big-num">2.3万份</div>
+                    <p>三年累计免费爱心餐</p>
+                    <div class="sub-num">50余万元</div>
+                    <p>爱心餐折算价值</p>
+                    <div class="sub-num" style="font-size:1.4rem;margin-top:24px;">300件军用棉大衣</div>
+                    <p>捐赠河口县桥头乡守边人员（价值9.8万元）</p>
+                    <div class="sub-num" style="font-size:1.4rem;margin-top:24px;">20余人</div>
+                    <p>吸纳贫困家庭劳动力就业</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Charity -->
+<section class="section" style="background:var(--bg-cream);">
+    <div class="container">
+        <div class="section-header">
+            <h2>公益之路</h2>
+            <div class="section-divider"></div>
+            <p>益路同行，用爱守护边境留守儿童</p>
+        </div>
+        <div class="charity-grid">
+            <div class="charity-text">
+                <h3><i class="fas fa-hand-holding-heart" style="margin-right:8px;color:var(--primary);"></i>关爱留守儿童，豆豆屋与您益路同行</h3>
+                <p>自2008年起，滇越故事餐厅每年6月1日举办"关爱留守儿童豆豆屋与您益路同行"义卖活动，将爱心义卖所得全部捐赠给边境留守儿童。</p>
+                <p>十余年坚持不辍，累计为留守儿童捐献资金达40余万元。先后捐款捐物价值达100余万元，用实际行动诠释着边境餐饮人的社会责任与担当。</p>
+            </div>
+            <div class="charity-stats">
+                <div class="charity-stat">
+                    <div class="num">40万+</div>
+                    <div class="label">累计捐献留守儿童资金（元）</div>
+                </div>
+                <div class="charity-stat">
+                    <div class="num">100万+</div>
+                    <div class="label">累计捐款捐物价值（元）</div>
+                </div>
+                <div class="charity-stat">
+                    <div class="num">2008</div>
+                    <div class="label">义卖活动创始年份</div>
+                </div>
+                <div class="charity-stat">
+                    <div class="num">16年+</div>
+                    <div class="label">持续公益时长</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Two Stores -->
+<section class="section" style="background:white;">
+    <div class="container">
+        <div class="section-header">
+            <h2>两店风采</h2>
+            <div class="section-divider"></div>
+            <p>河口店与蒙自店，两地同品滇越故事</p>
+        </div>
+        <div class="stores-grid">
+            <div class="store-card">
+                <img class="store-img" src="images/dianyue_hero.jpg" alt="河口店">
+                <div class="store-body">
+                    <h3><i class="fas fa-map-marker-alt"></i> 河口店</h3>
+                    <div>
+                        <span class="store-tag">异域风情街</span>
+                        <span class="store-tag">紧邻口岸</span>
+                        <span class="store-tag">中越特色</span>
+                    </div>
+                    <p>位于河口异域风情街，紧邻河口口岸。店内装饰融入滇越铁路文化元素，百年米轨的枕木、法式站牌……在中越边境线上品味两个国家的故事。</p>
+                    <p style="color:var(--primary);font-weight:600;"><i class="fas fa-phone" style="margin-right:6px;"></i>3429200</p>
+                </div>
+            </div>
+            <div class="store-card">
+                <img class="store-img" src="images/dianyue_mengzi.jpg" alt="蒙自店">
+                <div class="store-body">
+                    <h3><i class="fas fa-map-marker-alt"></i> 蒙自店</h3>
+                    <div>
+                        <span class="store-tag">蒙自市</span>
+                        <span class="store-tag">过桥米线</span>
+                        <span class="store-tag">滇南风味</span>
+                    </div>
+                    <p>位于蒙自市，传承过桥米线发源地的地道风味。蒙自店的过桥米线，以最正宗的工艺和食材，让食客品味滇南文化的精髓。</p>
+                    <p style="color:var(--primary);font-weight:600;"><i class="fas fa-phone" style="margin-right:6px;"></i>3660036</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menu -->
+<section class="section" style="background:var(--bg-cream);">
+    <div class="container">
+        <div class="section-header">
+            <h2>招牌菜品</h2>
+            <div class="section-divider"></div>
+            <p>中越主厨匠心呈现，边境风味舌尖绽放</p>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="menu-icon"><i class="fas fa-fish"></i></div>
+                <div><h4>黄皮果鱼</h4><p>独家"双厨匠心烹制工艺"</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <div><h4>瑶家牛肉</h4><p>瑶族传统风味，鲜香浓郁</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon"><i class="fas fa-bone"></i></div>
+                <div><h4>山楂小排</h4><p>酸甜开胃，口感层次丰富</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon"><i class="fas fa-leaf"></i></div>
+                <div><h4>越南春卷</h4><p>正宗越南风味，清爽可口</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon"><i class="fas fa-coffee"></i></div>
+                <div><h4>滴漏咖啡</h4><p>越式滴漏，浓郁醇香</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="menu-icon"><i class="fas fa-bowl-hot"></i></div>
+                <div><h4>过桥米线</h4><p>蒙自店特色，正宗滇南味</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="section" style="background:white;">
+    <div class="container">
+        <div class="section-header">
+            <h2>影像记录</h2>
+            <div class="section-divider"></div>
+            <p>点击图片查看大图</p>
+        </div>
+        <div class="gallery-grid" id="gallery">
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/dianyue_hero.jpg" alt="滇越故事餐厅"><span class="gallery-name">滇越故事餐厅</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/dianyue_culture.jpg" alt="滇越铁路文化"><span class="gallery-name">滇越铁路文化</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/dianyue_dish1.jpg" alt="招牌菜品"><span class="gallery-name">招牌菜品</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/dianyue_dish2.jpg" alt="中越美食"><span class="gallery-name">中越美食</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/dianyue_mengzi.jpg" alt="蒙自店"><span class="gallery-name">蒙自店</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/dianyue_team.jpg" alt="中越主厨团队"><span class="gallery-name">中越主厨团队</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>联系我们</h2>
+            <div class="section-divider"></div>
+            <p>两店同品滇越故事，欢迎莅临</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:6px;"></i>河口店</h3>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>云南省红河州河口县异域风情街</span></div>
+                <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:3429200">3429200</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:HDgdtravel@outlook.com">HDgdtravel@outlook.com</a></div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24" width="16" height="16" style="color:var(--primary)"><path fill="currentColor" d="M12.49 10.272v-.45h1.347v6.322h-.77l-.144-.432a2.23 2.23 0 01-1.645.582c-1.268 0-2.22-.99-2.22-2.394 0-1.404.952-2.394 2.22-2.394.612 0 1.098.216 1.212.566zm-.77 3.78c.738 0 1.278-.576 1.278-1.395s-.54-1.395-1.278-1.395-1.278.576-1.278 1.395.54 1.395 1.278 1.395z"/></svg>
+                    <span>Zalo: Zalo0889727222</span>
+                </div>
+            </div>
+            <div class="contact-card">
+                <h3><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:6px;"></i>蒙自店</h3>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>云南省红河州蒙自市</span></div>
+                <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:3660036">3660036</a></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:HDgdtravel@outlook.com">HDgdtravel@outlook.com</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to main site -->
+<div class="back-site">
+    <a href="index.html"><i class="fas fa-home"></i> 返回瓜豆旅游官网</a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose">&times;</button>
+    <img id="lbImg" src="" alt="">
+    <div class="lightbox-name" id="lbName"></div>
+    <div class="lightbox-counter" id="lbCounter"></div>
+    <div class="lightbox-nav">
+        <button id="lbPrev"><i class="fas fa-chevron-left"></i></button>
+        <button id="lbNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Lightbox
+let lbItems = [], lbIndex = 0;
+function openLightbox(el) {
+    const grid = document.getElementById('gallery');
+    const items = grid.querySelectorAll('.gallery-item');
+    lbItems = Array.from(items).map(i => ({ src: i.querySelector('img').src, name: i.querySelector('.gallery-name').textContent }));
+    lbIndex = Array.from(items).indexOf(el);
+    showLb();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function showLb() {
+    const item = lbItems[lbIndex];
+    document.getElementById('lbImg').src = item.src;
+    document.getElementById('lbName').textContent = item.name;
+    document.getElementById('lbCounter').textContent = `${lbIndex + 1} / ${lbItems.length}`;
+}
+document.getElementById('lbClose').onclick = () => { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; };
+document.getElementById('lightbox').onclick = (e) => { if (e.target.id === 'lightbox') { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; } };
+document.getElementById('lbPrev').onclick = () => { lbIndex = (lbIndex - 1 + lbItems.length) % lbItems.length; showLb(); };
+document.getElementById('lbNext').onclick = () => { lbIndex = (lbIndex + 1) % lbItems.length; showLb(); };
+document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
+    if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + lbItems.length) % lbItems.length; showLb(); }
+    if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % lbItems.length; showLb(); }
+});
+</script>
+</body>
+</html>
