@@ -435,6 +435,7 @@ const translations = {
         biz_batiaoban_name: "八条半",
         biz_batiaoban_loc: "河口县",
         biz_batiaoban_desc: "河口特色乡村旅游景点，感受边境田园风光与少数民族文化，体验慢生活。",
+        biz_view_detail: "查看景区详情",
     },
 
     vi: {
@@ -872,6 +873,7 @@ const translations = {
         biz_batiaoban_name: "Bát Điều Bán",
         biz_batiaoban_loc: "Huyện Hà Khẩu",
         biz_batiaoban_desc: "Điểm du lịch nông thôn đặc sắc Hà Khẩu, cảm nhận phong cảnh điền viên biên giới và văn hóa dân tộc thiểu số, trải nghiệm cuộc sống chậm.",
+        biz_view_detail: "Xem chi tiết khu du lịch",
     },
 
     en: {
@@ -1309,5 +1311,6 @@ const translations = {
         biz_batiaoban_name: "Batiaoban",
         biz_batiaoban_loc: "Hekou County",
         biz_batiaoban_desc: "Hekou's special rural tourism spot. Experience border pastoral scenery and ethnic minority culture. Embrace slow living.",
+        biz_view_detail: "View Scenic Details",
     }
 };

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八条半·忆光年 | 国家AAA级旅游景区 | 河口八条半旅游开发有限公司</title>
+    <meta name="description" content="八条半·忆光年景区，国家AAA级旅游景区，云南省最美乡愁旅游地。百年滇越铁路穿村而过，法式建筑、无边泳池、房车营地、观光栈道，中越边境特色乡村旅游综合体。">
+    <link rel="icon" href="logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a7a4c;
+            --primary-dark: #145e3b;
+            --primary-glow: rgba(26,122,76,0.25);
+            --secondary: #1e3a5f;
+            --accent: #e8a838;
+            --bg-cream: #faf8f4;
+            --text-dark: #1a1a2e;
+            --text-medium: #555;
+            --text-light: #888;
+            --gray-200: #e8e8e8;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+            --border-radius: 14px;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Noto Sans SC',sans-serif; color:var(--text-dark); background:var(--bg-cream); line-height:1.6; }
+
+        /* Navigation */
+        .navbar { position:fixed; top:0; left:0; right:0; z-index:1000; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); padding:0 24px; transition:var(--transition); }
+        .navbar.scrolled { box-shadow:var(--shadow-sm); }
+        .nav-container { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:68px; }
+        .nav-back { display:flex; align-items:center; gap:8px; color:var(--secondary); text-decoration:none; font-weight:600; font-size:0.95rem; transition:var(--transition); }
+        .nav-back:hover { color:var(--primary); transform:translateX(-3px); }
+        .nav-title { font-weight:700; color:var(--secondary); font-size:1.1rem; }
+
+        /* Hero */
+        .hero { position:relative; height:85vh; min-height:500px; overflow:hidden; }
+        .hero-bg { position:absolute; inset:0; background:url('images/batiaoban_hero.jpg') center/cover no-repeat; }
+        .hero-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(26,58,95,0.7),rgba(26,122,76,0.5)); }
+        .hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; color:white; padding:0 24px; }
+        .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.15); backdrop-filter:blur(8px); padding:8px 20px; border-radius:30px; font-size:0.85rem; margin-bottom:20px; border:1px solid rgba(255,255,255,0.25); }
+        .hero h1 { font-size:3.5rem; font-weight:900; margin-bottom:12px; text-shadow:0 2px 20px rgba(0,0,0,0.3); }
+        .hero h1 span { color:var(--accent); }
+        .hero-sub { font-size:1.2rem; max-width:600px; opacity:0.9; line-height:1.7; }
+        .hero-tags { display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; justify-content:center; }
+        .hero-tag { background:rgba(255,255,255,0.2); backdrop-filter:blur(6px); padding:8px 18px; border-radius:20px; font-size:0.82rem; border:1px solid rgba(255,255,255,0.2); }
+
+        /* Section styles */
+        .section { padding:80px 24px; }
+        .container { max-width:1100px; margin:0 auto; }
+        .section-header { text-align:center; margin-bottom:50px; }
+        .section-header h2 { font-size:2rem; font-weight:700; color:var(--secondary); margin-bottom:10px; }
+        .section-header p { color:var(--text-medium); font-size:1rem; max-width:600px; margin:0 auto; }
+        .section-divider { width:50px; height:4px; background:var(--primary); border-radius:2px; margin:14px auto; }
+
+        /* About section */
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+        .about-text h3 { font-size:1.5rem; color:var(--secondary); margin-bottom:16px; }
+        .about-text p { color:var(--text-medium); margin-bottom:14px; line-height:1.8; }
+        .about-img { border-radius:var(--border-radius); overflow:hidden; box-shadow:var(--shadow-lg); }
+        .about-img img { width:100%; display:block; aspect-ratio:16/10; object-fit:cover; }
+
+        /* Stats */
+        .stats { background:var(--secondary); padding:50px 24px; }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:1100px; margin:0 auto; }
+        .stat-item { text-align:center; color:white; }
+        .stat-num { font-size:2.4rem; font-weight:900; color:var(--accent); }
+        .stat-label { font-size:0.85rem; opacity:0.8; margin-top:4px; }
+
+        /* Features */
+        .features-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+        .feature-card { background:white; border-radius:var(--border-radius); overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); transition:var(--transition); }
+        .feature-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-md); border-color:transparent; }
+        .feature-img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+        .feature-body { padding:22px; }
+        .feature-body h3 { font-size:1.15rem; color:var(--secondary); margin-bottom:8px; }
+        .feature-body p { color:var(--text-medium); font-size:0.9rem; line-height:1.7; }
+
+        /* Gallery */
+        .gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+        .gallery-item { position:relative; border-radius:10px; overflow:hidden; aspect-ratio:4/3; cursor:pointer; }
+        .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s ease; }
+        .gallery-item:hover img { transform:scale(1.1); }
+        .gallery-name { position:absolute; bottom:0; left:0; right:0; padding:6px; background:linear-gradient(transparent,rgba(0,0,0,0.7)); color:white; font-size:0.75rem; text-align:center; }
+
+        /* Timeline */
+        .timeline { position:relative; padding-left:30px; }
+        .timeline::before { content:''; position:absolute; left:8px; top:0; bottom:0; width:3px; background:var(--primary); border-radius:2px; }
+        .timeline-item { position:relative; margin-bottom:30px; }
+        .timeline-item::before { content:''; position:absolute; left:-26px; top:6px; width:14px; height:14px; background:var(--primary); border-radius:50%; border:3px solid white; box-shadow:var(--shadow-sm); }
+        .timeline-year { font-weight:700; color:var(--primary); font-size:1rem; margin-bottom:4px; }
+        .timeline-text { color:var(--text-medium); font-size:0.9rem; line-height:1.7; }
+
+        /* Contact */
+        .contact-card { background:white; border-radius:var(--border-radius); padding:36px; box-shadow:var(--shadow-md); text-align:center; max-width:600px; margin:0 auto; }
+        .contact-card h3 { font-size:1.3rem; color:var(--secondary); margin-bottom:20px; }
+        .contact-item { display:flex; align-items:center; gap:12px; justify-content:center; padding:12px 0; border-bottom:1px solid var(--gray-200); }
+        .contact-item:last-child { border-bottom:none; }
+        .contact-item i { color:var(--primary); width:20px; }
+        .contact-item a { color:var(--secondary); text-decoration:none; }
+        .contact-item a:hover { color:var(--primary); }
+
+        /* Back to main site */
+        .back-site { text-align:center; padding:40px 24px; background:var(--secondary); }
+        .back-site a { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:white; padding:14px 36px; border-radius:10px; text-decoration:none; font-weight:600; font-size:1rem; transition:var(--transition); }
+        .back-site a:hover { background:#d4942e; transform:translateY(-2px); }
+
+        /* Lightbox */
+        .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; display:none; align-items:center; justify-content:center; flex-direction:column; padding:20px; }
+        .lightbox.active { display:flex; }
+        .lightbox img { max-width:90%; max-height:75vh; border-radius:12px; object-fit:contain; box-shadow:0 8px 40px rgba(0,0,0,0.4); }
+        .lightbox-close { position:absolute; top:20px; right:30px; color:white; font-size:2rem; cursor:pointer; background:none; border:none; }
+        .lightbox-name { color:white; font-size:1.1rem; margin-top:12px; }
+        .lightbox-counter { color:rgba(255,255,255,0.6); font-size:0.85rem; margin-top:4px; }
+        .lightbox-nav { display:flex; gap:14px; margin-top:14px; }
+        .lightbox-nav button { padding:10px 22px; background:rgba(255,255,255,0.12); color:white; border:1px solid rgba(255,255,255,0.25); border-radius:8px; font-size:0.95rem; cursor:pointer; }
+        .lightbox-nav button:hover { background:rgba(255,255,255,0.3); }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .hero h1 { font-size:2.2rem; }
+            .hero-sub { font-size:1rem; }
+            .about-grid { grid-template-columns:1fr; }
+            .features-grid { grid-template-columns:1fr; }
+            .gallery-grid { grid-template-columns:repeat(2,1fr); }
+            .stats-grid { grid-template-columns:repeat(2,1fr); gap:30px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> 返回瓜豆旅游</a>
+        <span class="nav-title">八条半·忆光年</span>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-award"></i> 国家AAA级旅游景区</div>
+        <h1>八条半·<span>忆光年</span></h1>
+        <p class="hero-sub">百年滇越铁路穿村而过，中越边境线上的世外桃源。<br>法式建筑、无边泳池、房车营地，体验边境慢生活。</p>
+        <div class="hero-tags">
+            <span class="hero-tag"><i class="fas fa-train"></i> 百年米轨铁路</span>
+            <span class="hero-tag"><i class="fas fa-swimming-pool"></i> 无边泳池</span>
+            <span class="hero-tag"><i class="fas fa-caravan"></i> 房车营地</span>
+            <span class="hero-tag"><i class="fas fa-mountain"></i> 边境风光</span>
+            <span class="hero-tag"><i class="fas fa-utensils"></i> 农家美食</span>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+    <div class="stats-grid">
+        <div class="stat-item"><div class="stat-num">13万+</div><div class="stat-label">年接待游客</div></div>
+        <div class="stat-item"><div class="stat-num">1820万</div><div class="stat-label">项目总投资（元）</div></div>
+        <div class="stat-item"><div class="stat-num">AAA</div><div class="stat-label">国家景区等级</div></div>
+        <div class="stat-item"><div class="stat-num">1.5km</div><div class="stat-label">中越边界线</div></div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section" style="background:white;">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>八条半·忆光年</h3>
+                <p>八条半村位于云南省红河州河口县，背靠木瓜冲山、面临南溪河，与越南老街省隔河相望，拥有1.5公里边界线。</p>
+                <p>村名源于滇越铁路的独特计量方式——1903年修建铁路时以"一条"为一公里，河口火车站距此刚好8.5公里，"八条半"之名由此而来。</p>
+                <p>2023年3月，"八条半·忆光年"文旅项目正式启动，投资1820万余元，以百年滇越米轨文化为主线，打造集观光栈道、无边泳池、枕木广场、房车营地、农家乐于一体的特色乡村旅游综合体。</p>
+                <p>2024年成功获评<strong>国家AAA级旅游景区</strong>，入选<strong>云南省最美乡愁旅游地</strong>。</p>
+            </div>
+            <div class="about-img">
+                <img src="images/batiaoban_railway.jpg" alt="百年滇越铁路穿村而过">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>景区亮点</h2>
+            <div class="section-divider"></div>
+            <p>六大核心体验，感受中越边境独特魅力</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img class="feature-img" src="images/batiaoban_railway.jpg" alt="百年滇越铁路">
+                <div class="feature-body">
+                    <h3><i class="fas fa-train" style="color:var(--primary);margin-right:6px;"></i>百年滇越米轨铁路</h3>
+                    <p>百年米轨铁路穿村而过，铁路围墙上雕刻着从昆明到河口各站点的风景。漫步铁轨，追忆滇越铁路120年的沧桑变迁史。</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img class="feature-img" src="images/batiaoban_pool.jpg" alt="无边泳池">
+                <div class="feature-body">
+                    <h3><i class="fas fa-swimming-pool" style="color:var(--primary);margin-right:6px;"></i>无边泳池</h3>
+                    <p>倚南溪河而建的无边泳池，泳池水与河谷风光融为一体。夏季更有泳池音乐派对、泡泡秀等精彩活动，是消暑狂欢的绝佳去处。</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img class="feature-img" src="images/batiaoban_boardwalk.jpg" alt="观光栈道">
+                <div class="feature-body">
+                    <h3><i class="fas fa-hiking" style="color:var(--primary);margin-right:6px;"></i>南溪河观光栈道</h3>
+                    <p>沿南溪河修建的观景栈道，一步一景，尽览中越两国风光。打卡铁路主题文化长廊，感受边境山水与人文交融的独特画面。</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img class="feature-img" src="images/batiaoban_rv.jpg" alt="房车营地">
+                <div class="feature-body">
+                    <h3><i class="fas fa-caravan" style="color:var(--primary);margin-right:6px;"></i>房车营地</h3>
+                    <p>配备公共卫生间、淋浴间、电车充电桩，推窗即赏南溪河风光。全国各地房车爱好者在此旅居，体验边境慢生活的松弛与惬意。</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img class="feature-img" src="images/batiaoban_french.jpg" alt="法式建筑">
+                <div class="feature-body">
+                    <h3><i class="fas fa-landmark" style="color:var(--primary);margin-right:6px;"></i>法式风情建筑</h3>
+                    <p>黄白相间的法式风格民居整齐排列，国旗飘扬，百年米轨铁路穿村而过，形成独特的异域风情景观，是网红打卡地。</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <img class="feature-img" src="images/batiaoban_bbq.jpg" alt="农家美食">
+                <div class="feature-body">
+                    <h3><i class="fas fa-utensils" style="color:var(--primary);margin-right:6px;"></i>农家美食与庭院经济</h3>
+                    <p>村民在自家小楼前经营小卖部、院坝烧烤、咖啡店等，让游客沉浸式体验本地民风民俗，品尝地道边境美食。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="section" style="background:white;">
+    <div class="container">
+        <div class="section-header">
+            <h2>景区相册</h2>
+            <div class="section-divider"></div>
+            <p>点击图片查看大图</p>
+        </div>
+        <div class="gallery-grid" id="gallery">
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_hero.jpg" alt="八条半全景"><span class="gallery-name">八条半全景</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_railway.jpg" alt="百年米轨铁路"><span class="gallery-name">百年米轨铁路</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_pool.jpg" alt="无边泳池"><span class="gallery-name">无边泳池</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_boardwalk.jpg" alt="观光栈道"><span class="gallery-name">观光栈道</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_french.jpg" alt="法式建筑"><span class="gallery-name">法式建筑</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_rv.jpg" alt="房车营地"><span class="gallery-name">房车营地</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_bbq.jpg" alt="农家美食"><span class="gallery-name">农家美食</span></div>
+            <div class="gallery-item" onclick="openLightbox(this)"><img src="images/batiaoban_culture.jpg" alt="文化走廊"><span class="gallery-name">文化走廊</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- History Timeline -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>发展历程</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div style="max-width:650px;margin:0 auto;">
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-year">1903年</div><div class="timeline-text">滇越铁路修建，以"一条"为一公里，河口站到此8.5公里，"八条半"得名</div></div>
+                <div class="timeline-item"><div class="timeline-year">2005年</div><div class="timeline-text">橡胶场改制，八条半村民小组组建而成</div></div>
+                <div class="timeline-item"><div class="timeline-year">2014年</div><div class="timeline-text">县委县政府带领村民美化村容村貌，拆除重建29套民居，奠定文旅发展基础</div></div>
+                <div class="timeline-item"><div class="timeline-year">2021年</div><div class="timeline-text">八条半村被认定为云南省边境小康示范村</div></div>
+                <div class="timeline-item"><div class="timeline-year">2023年3月</div><div class="timeline-text">"八条半·忆光年"文旅项目启动，投资1820万余元，由河口八条半旅游开发有限公司运营</div></div>
+                <div class="timeline-item"><div class="timeline-year">2023年</div><div class="timeline-text">年接待游客近10万人次，其中越南游客3.8万人次，入选云南省最美乡愁旅游地</div></div>
+                <div class="timeline-item"><div class="timeline-year">2024年</div><div class="timeline-text">年接待游客超13万人次，成功获评国家AAA级旅游景区</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section" style="background:white;">
+    <div class="container">
+        <div class="section-header">
+            <h2>联系我们</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="contact-card">
+            <h3>河口八条半旅游开发有限公司</h3>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>中国（云南）自由贸易试验区红河片区河口县城郊村委会八条半村</span></div>
+            <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:19048737489">19048737489</a></div>
+            <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:HDgdtravel@outlook.com">HDgdtravel@outlook.com</a></div>
+            <div class="contact-item">
+                <svg viewBox="0 0 24 24" width="16" height="16" style="color:var(--primary)"><path fill="currentColor" d="M12.49 10.272v-.45h1.347v6.322h-.77l-.144-.432a2.23 2.23 0 01-1.645.582c-1.268 0-2.22-.99-2.22-2.394 0-1.404.952-2.394 2.22-2.394.612 0 1.098.216 1.212.566zm-.77 3.78c.738 0 1.278-.576 1.278-1.395s-.54-1.395-1.278-1.395-1.278.576-1.278 1.395.54 1.395 1.278 1.395z"/></svg>
+                <span>Zalo: Zalo0889727222</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to main site -->
+<div class="back-site">
+    <a href="index.html"><i class="fas fa-home"></i> 返回瓜豆旅游官网</a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lbClose">&times;</button>
+    <img id="lbImg" src="" alt="">
+    <div class="lightbox-name" id="lbName"></div>
+    <div class="lightbox-counter" id="lbCounter"></div>
+    <div class="lightbox-nav">
+        <button id="lbPrev"><i class="fas fa-chevron-left"></i></button>
+        <button id="lbNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Lightbox
+let lbItems = [], lbIndex = 0;
+function openLightbox(el) {
+    const grid = document.getElementById('gallery');
+    const items = grid.querySelectorAll('.gallery-item');
+    lbItems = Array.from(items).map(i => ({ src: i.querySelector('img').src, name: i.querySelector('.gallery-name').textContent }));
+    lbIndex = Array.from(items).indexOf(el);
+    showLb();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function showLb() {
+    const item = lbItems[lbIndex];
+    document.getElementById('lbImg').src = item.src;
+    document.getElementById('lbName').textContent = item.name;
+    document.getElementById('lbCounter').textContent = `${lbIndex + 1} / ${lbItems.length}`;
+}
+document.getElementById('lbClose').onclick = () => { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; };
+document.getElementById('lightbox').onclick = (e) => { if (e.target.id === 'lightbox') { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; } };
+document.getElementById('lbPrev').onclick = () => { lbIndex = (lbIndex - 1 + lbItems.length) % lbItems.length; showLb(); };
+document.getElementById('lbNext').onclick = () => { lbIndex = (lbIndex + 1) % lbItems.length; showLb(); };
+document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow = ''; }
+    if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + lbItems.length) % lbItems.length; showLb(); }
+    if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % lbItems.length; showLb(); }
+});
+</script>
+</body>
+</html>
