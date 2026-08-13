@@ -67,7 +67,7 @@
 
         /* ===== HERO ===== */
         .hero { position:relative; height:100vh; min-height:700px; overflow:hidden; }
-        .hero-bg { position:absolute; inset:0; background:url('images/dianyue_hero.jpg') center/cover no-repeat; transition:transform 0.1s linear; will-change:transform; }
+        .hero-bg { position:absolute; inset:0; background:url('images/dianyue_new_hero.jpg') center/cover no-repeat; transition:transform 0.1s linear; will-change:transform; }
         .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(13,8,6,0.25) 0%,rgba(13,8,6,0.5) 40%,rgba(13,8,6,0.88) 100%); }
         .hero-content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; text-align:center; color:white; padding:0 24px; }
         .hero-eyebrow { display:inline-flex; align-items:center; gap:12px; background:rgba(201,169,110,0.12); border:1px solid rgba(201,169,110,0.35); padding:12px 32px; border-radius:40px; font-size:0.8rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold-light); margin-bottom:32px; backdrop-filter:blur(12px); }
@@ -91,7 +91,7 @@
         .manifesto { background:var(--bg-dark); padding:120px 24px; position:relative; overflow:hidden; text-align:center; }
         .manifesto::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
         .manifesto::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-        .manifesto-bg { position:absolute; inset:0; background:url('images/dianyue_culture.jpg') center/cover no-repeat; opacity:0.06; }
+        .manifesto-bg { position:absolute; inset:0; background:url('images/dianyue_new_culture.jpg') center/cover no-repeat; opacity:0.06; }
         .manifesto-content { position:relative; z-index:1; max-width:800px; margin:0 auto; }
         .manifesto-emblem { width:80px; height:80px; margin:0 auto 40px; border-radius:50%; border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; position:relative; }
         .manifesto-emblem::before { content:''; position:absolute; inset:-8px; border-radius:50%; border:1px solid rgba(201,169,110,0.25); }
@@ -140,7 +140,7 @@
 
         /* ===== HERITAGE TIMELINE ===== */
         .heritage-section { background:var(--bg-dark); padding:110px 24px; position:relative; overflow:hidden; }
-        .heritage-section::before { content:''; position:absolute; inset:0; background:url('images/dianyue_culture.jpg') center/cover no-repeat; opacity:0.05; }
+        .heritage-section::before { content:''; position:absolute; inset:0; background:url('images/dianyue_new_culture.jpg') center/cover no-repeat; opacity:0.05; }
         .heritage-section .section-label { color:var(--gold); }
         .heritage-section .section-header h2 { color:white; }
         .heritage-section .section-header p { color:rgba(255,255,255,0.55); }
@@ -173,7 +173,7 @@
 
         /* ===== HONORS ===== */
         .honors-section { background:var(--bg-dark); padding:110px 24px; position:relative; overflow:hidden; }
-        .honors-section::before { content:''; position:absolute; inset:0; background:url('images/dianyue_culture.jpg') center/cover no-repeat; opacity:0.06; }
+        .honors-section::before { content:''; position:absolute; inset:0; background:url('images/dianyue_new_culture.jpg') center/cover no-repeat; opacity:0.06; }
         .honors-section .section-label { color:var(--gold); }
         .honors-section .section-header h2 { color:white; }
         .honors-section .section-header p { color:rgba(255,255,255,0.55); }
@@ -421,7 +421,7 @@
                 <div class="story-highlight"><i class="fas fa-quote-left"></i> 一窗观两国 · 百年米轨旁的美食传奇</div>
             </div>
             <div class="story-img-wrap reveal-right">
-                <img loading="lazy" src="images/dianyue_culture.jpg" alt="滇越铁路百年文化">
+                <img loading="lazy" src="images/dianyue_new_culture.jpg" alt="滇越铁路百年文化">
                 <div class="story-img-frame"></div>
                 <div class="story-img-badge">
                     <span class="badge-since">SINCE</span>
@@ -642,7 +642,7 @@
         <div class="stores-grid">
             <div class="store-card reveal-left">
                 <div class="store-img-wrap">
-                    <img loading="lazy" class="store-img" src="images/dianyue_hero.jpg" alt="河口店">
+                    <img loading="lazy" class="store-img" src="images/dianyue_new_hekou.jpg" alt="河口店">
                     <div class="store-img-overlay"><i class="fas fa-map-marker-alt"></i> 河口口岸</div>
                 </div>
                 <div class="store-body">
@@ -658,7 +658,7 @@
             </div>
             <div class="store-card reveal-right">
                 <div class="store-img-wrap">
-                    <img loading="lazy" class="store-img" src="images/dianyue_mengzi.jpg" alt="蒙自店">
+                    <img loading="lazy" class="store-img" src="images/dianyue_new_mengzi.jpg" alt="蒙自店">
                     <div class="store-img-overlay"><i class="fas fa-map-marker-alt"></i> 蒙自市</div>
                 </div>
                 <div class="store-body">
@@ -732,12 +732,12 @@
             <p>点击图片查看大图</p>
         </div>
         <div class="gallery-grid" id="gallery">
-            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_hero.jpg" alt="滇越故事餐厅"><span class="gallery-name">滇越故事餐厅</span></div>
-            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_culture.jpg" alt="滇越铁路百年文化"><span class="gallery-name">滇越铁路百年文化</span></div>
-            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_dish1.jpg" alt="中越融合美食"><span class="gallery-name">中越融合美食</span></div>
-            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_dish2.jpg" alt="边境特色菜品"><span class="gallery-name">边境特色菜品</span></div>
-            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_mengzi.jpg" alt="蒙自店风光"><span class="gallery-name">蒙自店风光</span></div>
-            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_team.jpg" alt="中越主厨团队"><span class="gallery-name">中越主厨团队</span></div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_new_hero.jpg" alt="滇越故事餐厅"><span class="gallery-name">滇越故事餐厅</span></div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_new_culture.jpg" alt="滇越铁路百年文化"><span class="gallery-name">滇越铁路百年文化</span></div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_new_dish1.jpg" alt="中越融合美食"><span class="gallery-name">中越融合美食</span></div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_new_dish2.jpg" alt="边境特色菜品"><span class="gallery-name">边境特色菜品</span></div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_new_mengzi.jpg" alt="蒙自店风光"><span class="gallery-name">蒙自店风光</span></div>
+            <div class="gallery-item reveal" onclick="openLightbox(this)"><img loading="lazy" src="images/dianyue_new_team.jpg" alt="中越主厨团队"><span class="gallery-name">中越主厨团队</span></div>
         </div>
     </div>
 </section>
